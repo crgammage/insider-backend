@@ -7,18 +7,18 @@ class ArticlesController < ApplicationController
 
     def show
         article = Article.find(params[:id])
-        render json: article, except: [:updated_at, :created_at]
+        render json: article
     end
 
     def create
         article = Article.create(article_params)
-        render json: article, except: [:updated_at, :created_at]
+        render json: article
     end
 
     def update
         article = Article.find(params[:id])
         article.update(article_params)
-        render json: article, except: [:updated_at, :created_at]
+        render json: article
     end
 
     def destroy
